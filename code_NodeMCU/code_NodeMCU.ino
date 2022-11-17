@@ -1,8 +1,8 @@
-/*
+
 #include <ESP8266WiFi.h>
 const char* ssid = "EnGenius27EDCC";
 const char* password = "ZYB3VBAF8PF2";
-*/
+
 int valor;
 int estado = 0;   
 int gro;
@@ -22,7 +22,7 @@ void setup() {
   pinMode(sensor, INPUT);
 
   Serial.begin(1200);
-/*
+
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
@@ -41,7 +41,7 @@ void setup() {
   Serial.println(WiFi.localIP());
   Serial.println("Mac Address: ");
   Serial.println(WiFi.macAddress());
-*/
+
 }
 
 void loop() {
@@ -53,7 +53,7 @@ void loop() {
 
   digitalWrite(2, HIGH);
   
-  /*
+
   if(WiFi.status() == WL_CONNECTED){
     digitalWrite(16, HIGH);
     delay(600);
@@ -70,7 +70,7 @@ void loop() {
   if (valor == HIGH){
     digitalWrite(4, !estado); 
   }
-*/
+
   //===============================
   //@sensor
   //
