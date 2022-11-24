@@ -1,1 +1,3 @@
-code_server/nginx_server/logs/access.log/**
+code_server/nginx_server/logs/access.log/hola.txt
+
+*.log
