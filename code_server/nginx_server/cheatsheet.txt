@@ -1,0 +1,8 @@
+start nginx
+@tasklist /fi "imagename eq nginx.exe"
+nginx -s stop
+nginx -s quit
+nginx -s reload
+nginx -s reopen
+
+@taskkill /f /im nginx.exe

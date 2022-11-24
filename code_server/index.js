@@ -16,7 +16,7 @@ app.use(express.static('../webPage'));
 const db = mysql.createConnection({
     host: 'localhost',            // Dónde está hosteada
     user: 'root',                 // Nombre de usuario
-    password: 'root',             // Contraseña de usuario
+    password: '',             // Contraseña de usuario
     database: 'Iot'               // Nombre de la base de datos
 });
 
