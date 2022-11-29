@@ -75,6 +75,7 @@ A web application that allows the Tec community to easily know if a campus class
   https://randomnerdtutorials.com/guide-for-microphone-sound-sensor-with-arduino/
   <br />
   Datasheet:
+  <br />
   https://cdn.awsli.com.br/945/945993/arquivos/sound%20sensor%20module.pdf
   </p>
   
@@ -87,6 +88,7 @@ A web application that allows the Tec community to easily know if a campus class
   https://randomnerdtutorials.com/arduino-with-pir-motion-sensor/
   <br />
   Datasheet:
+  <br />
   https://www.epitran.it/ebayDrive/datasheet/44.pdf
   </p>
   
