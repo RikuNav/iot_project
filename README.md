@@ -138,9 +138,10 @@ A web application that allows the Tec community to easily know if a campus class
      
      Remember from Hardware explanation that the status of classroom is marked as 'occupied' (with 1) only when it detects both sound and movement.
      
- Code for connexion, alongside its elxanation in commentry is in the following direction.
+ Code for connection, alongside its explanation is in the comments at the following direction.
  code_server/index.js
 
   </p>
+  
 ## <span style="color: rgb(26, 99, 169);">**Web Page**</span>
 
