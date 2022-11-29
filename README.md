@@ -60,6 +60,10 @@ A web application that allows the Tec community to easily know if a campus class
   Setting up your ESP8266:
   <br />
   https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
+  <br />
+  Arduino ESP8266 Pinouts:
+  <br />
+  https://esp8266-shop.com/esp8266-guide/esp8266-nodemcu-pinout/
   </p>
   
 - Sound sensor
@@ -78,6 +82,9 @@ A web application that allows the Tec community to easily know if a campus class
   Testing the Motion Sensor:
   <br />
   https://randomnerdtutorials.com/arduino-with-pir-motion-sensor/
+  <br />
+  Datasheet:
+  https://www.epitran.it/ebayDrive/datasheet/44.pdf
   </p>
   
 - Debbuging:
