@@ -129,12 +129,12 @@ A web application that allows the Tec community to easily know if a campus class
   <p style="text-align: center;">
     In the arduino code, once certain specifications are reached, the NodeMCU will send a data string to the server, this is in the for of
     </br>
-     - If there is both sound and movement, and the lights are on. Sends to server classrooom id (3101), status (1) and light status (1).
-     - If there is both sound and movement, and the lights are off. Sends to server classroom id (3101), status (1) and light status (0).
-     - If there no sound or no movement, and the lights are on. Sends to server classroom id (3101), status (0) and light status (1).
+     - If there is both sound and movement, and the lights are on. Sends to server classrooom id (3101), status (1) and light status (1). </br>
+     - If there is both sound and movement, and the lights are off. Sends to server classroom id (3101), status (1) and light status (0). </br>
+     - If there no sound or no movement, and the lights are on. Sends to server classroom id (3101), status (0) and light status (1). </br>
      - In any other case, sends to server classroom id (3101), status (0) ad light status (0).
      
-    Remember from Hardware explanation that the status of classroom is marked as 'occupied (with 1) only when it detects both sound and movement.
+   Remember from Hardware explanation that the status of classroom is marked as 'occupied (with 1) only when it detects both sound and movement.
      
  Code for connexion, alongside its elxanation in commentry is in the following direction.
  code_server/index.js
