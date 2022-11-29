@@ -18,9 +18,11 @@ A web application that allows the Tec community to easily know if a campus class
   <p style="text-align: center;">
   <img src="readme_images/sql.png" alt="node" style="width:200px;"/>
   <br />
-  Download here:
+  Download here either one:
   <br />
-  
+  XAMPP: https://www.apachefriends.org/index.html
+  <br />
+  MAMP (Used in our implementation): https://www.mamp.info/en/downloads/
   </p>
   
   - Arduino
