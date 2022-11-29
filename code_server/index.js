@@ -7,7 +7,7 @@ const cors=require("cors");
 app.use(cors());
 
 
-const res = {salon: 3101, estado: 1, luz: 0};
+const res = {salon_id: 3101, estado: 1, luz: 0};
 
 // Declaraciones de ayuda para leer datos enviados como JSON y texto en http
 app.use(express.json());
@@ -34,7 +34,7 @@ db.connect((err) => {
 });
 let time = new Date(Date.now()).toISOString();
 
-let querr =`INSERT INTO ocupado (salon_id, estado, hora, fecha, luz) VALUES (${res.salon}, ${res.estado}, '${Date}', '${time}', ${res.luz})`; 
+let querr =`INSERT INTO ocupado (salon_id, estado, hora, fecha, luz) VALUES (${res.salon_id}, ${res.estado}, '${Date}', '${time}', ${res.luz})`; 
 db.query(querr, (err, result) =>{
     if(err) {
         console.log(err);
