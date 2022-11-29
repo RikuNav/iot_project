@@ -122,7 +122,7 @@ A web application that allows the Tec community to easily know if a campus class
 
    </p>
    
- - Connexion from Node MCU to Data Base:
+ - Connection from Node MCU to Data Base:
    <p style="text-align: center;">
      This is where the Node.js server comes into play. Proceed if downloaded.
    </p>
@@ -137,11 +137,20 @@ A web application that allows the Tec community to easily know if a campus class
         - In any other case, sends to server classroom id (3101), status (0) ad light status (0).
      
      Remember from Hardware explanation that the status of classroom is marked as 'occupied' (with 1) only when it detects both sound and movement.
+     What this part of the code does is send a POST request for the addition of the data string to the Data Base.
      
- Code for connection, alongside its explanation is in the comments at the following direction.
+ Code for connexion, alongside its elxanation in commentry is in the following direction.
  code_server/index.js
 
   </p>
   
+ - From Server to Data Base:
+   <p>
+       Once the POST request is sent, the js document sets the connection to the database and executes the querry to insert the values sent from the Node MCU. </br>
+       Note that the NodeMCU does not send time and date, this is set in the JS code. </br>
+       The code for this, along with its explanation in comments is available in the following rout: </br>
+       iot_project/code_server/index.js /
+       
+  </p> 
 ## <span style="color: rgb(26, 99, 169);">**Web Page**</span>
 
