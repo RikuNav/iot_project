@@ -1,21 +1,19 @@
 # IOT_Project
 
 Team 4 BITS
-  - Ricardo Navarro Gómez A01708825
+  - Alain Vicencio Arizabalo A01620758
   - Fernando Josué Matute A00833375
   - Juan Pablo Martinez Valdivia
+  - Ricardo Navarro Gómez A01708825
   - Salvador Rodríguez Paredes A01704562
-  - Alain Vicencio Arizabalo A01620758
 
-
-# Neccessity that gives origin to the project.
+## <span style="color: rgb(26, 99, 169);">**Neccessity**</span>
 The students and collaborators from Tecnológico de Monterrey do not have a clear, direct nor an immediate way of knowing which classrooms are occupied and which aren't in a camps building. This affects the students that want to find an empty classroom to do their activities with no interruptions. This also affects the appropiate consumption of electrical energy, since there are cases where a classroom is not occupied yet the lights are still one. Finally, it also affects the optimization of the patrol routes for the security staff, since they have no way of telling if a classroom is emty when it should be.
 
-
-# Solution.
+## <span style="color: rgb(26, 99, 169);">**Solution**</span>
 A web application that allows the Tec community to easily know if a campus classroom is empty or not based on sound and movement sensors, whose results are stored in a data base. 
 
-# Technologies used.
+## <span style="color: rgb(26, 99, 169);">**Technologies used**</span>
   - Node MCU ESP8266
   - Sound sensor
   - Movement sensor
@@ -24,10 +22,9 @@ A web application that allows the Tec community to easily know if a campus class
   - Node JS
   - React
   
+## <span style="color: rgb(26, 99, 169);">**Hardware**</span>
 
-# Hardware
+## <span style="color: rgb(26, 99, 169);">**Data Base**</span>
 
-# Data Base
-
-# Web Page 
+## <span style="color: rgb(26, 99, 169);">**Web Page**</span>
 
