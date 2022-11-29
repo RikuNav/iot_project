@@ -15,9 +15,40 @@ A web application that allows the Tec community to easily know if a campus class
 
 ## <span style="color: rgb(26, 99, 169);">**Software used**</span>
   - MySQL Data Base
+  <p style="text-align: center;">
+  <img src="readme_images/sql.png" alt="node" style="width:200px;"/>
+  <br />
+  Download here:
+  <br />
+  
+  </p>
+  
   - Arduino
+  <p style="text-align: center;">
+  <img src="readme_images/arduino.png" alt="node" style="width:200px;"/>
+  <br />
+  Download here:
+  <br />
+  https://www.arduino.cc/en/software
+  </p>
+  
   - Node JS
+  <p style="text-align: center;">
+  <img src="readme_images/nodejs.png" alt="node" style="width:200px;"/>
+  <br />
+  Download here:
+  <br />
+  https://nodejs.org/en/download/
+  </p>
+  
   - React
+  <p style="text-align: center;">
+  <img src="readme_images/react.png" alt="node" style="width:200px;"/>
+  <br />
+  Download here:
+  <br />
+  https://en.reactjs.org
+  </p>
   
 ## <span style="color: rgb(26, 99, 169);">**Hardware**</span>
 - Node MCU ESP8266
