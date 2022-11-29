@@ -73,6 +73,9 @@ A web application that allows the Tec community to easily know if a campus class
   Testing the Sound Sensor:
   <br />
   https://randomnerdtutorials.com/guide-for-microphone-sound-sensor-with-arduino/
+  <br />
+  Datasheet:
+  https://cdn.awsli.com.br/945/945993/arquivos/sound%20sensor%20module.pdf
   </p>
   
 - Movement sensor
