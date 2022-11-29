@@ -1,4 +1,4 @@
-# iot_project
+# IOT_Project
 
 Team 4 BITS
   - Ricardo Navarro Gómez A01708825
