@@ -79,6 +79,13 @@ A web application that allows the Tec community to easily know if a campus class
   <br />
   https://randomnerdtutorials.com/arduino-with-pir-motion-sensor/
   </p>
+  
+- Debbuging:
+  <p style="text-align: center;">
+  Failed to connect to ESP32: Timed out waiting for packet header:
+  <br />
+  https://www.arduino.cc/en/software](https://randomnerdtutorials.com/?s=+Timed+out+waiting+for+packet+header)
+  </p>
 
 ## <span style="color: rgb(26, 99, 169);">**Data Base**</span>
 
