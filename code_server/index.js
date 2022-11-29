@@ -3,6 +3,11 @@ const mysql = require('mysql');
 const { readFile } = require('fs');
 const { networkInterfaces } = require('os');
 const app = express();
+const cors=require("cors");
+app.use(cors());
+
+
+const res = {salon: 3101, estado: 1, luz: 0};
 
 // Declaraciones de ayuda para leer datos enviados como JSON y texto en http
 app.use(express.json());
@@ -17,16 +22,30 @@ const db = mysql.createConnection({
     host: 'localhost',            // Dónde está hosteada
     user: 'root',                 // Nombre de usuario
     password: '',             // Contraseña de usuario
-    database: 'Iot'               // Nombre de la base de datos
-});
+    database: 'ms'               // Nombre de la base de datos
+}
+);
+
 
 // Se conecta a la base de datos, si hay un error detiene la ejecución del programa
 db.connect((err) => {
     if(err) throw err;
+    console.log('ya me cone')
+});
+let time = new Date(Date.now()).toISOString();
+
+let querr =`INSERT INTO ocupado (salon_id, estado, hora, fecha, luz) VALUES (${res.salon}, ${res.estado}, '${Date}', '${time}', ${res.luz})`; 
+db.query(querr, (err, result) =>{
+    if(err) {
+        console.log(err);
+        //Hacer cosas si no se puede añadir a la base de datos
+    } else {
+        console.log(result);
+    }
 });
 
 // Querry de prueba, imprime el resultado como los regresa mysql
-db.query('SELECT * FROM profesor', (err, res) => {
+db.query('SELECT * FROM ocupado', (err, res) => {
     if(err) throw err;
     console.log(res);
 });
@@ -60,17 +79,7 @@ app.post('/api', (req, res) => {
     console.log(req.body);
     // Cuando sepamos cual va a ser el formato con los datos que nos va a mandar el nodeMCU
     // los pasamos al INSERT INTO de la tabla de nuestra base de datos correspondiente
-    /*
-    let post = { id: 5, nombres: 'Juan', aPaterno: 'López', aMaterno: 'Castro', fNacimiento: '1999-01-01'};
-    db.query('INSERT INTO profesor SET ?', post, (err, result) => {
-        if(err) {
-            console.log(err);
-            //Hacer cosas si no se puede añadir a la base de datos
-        } else {
-            console.log(result);
-        }
-    });
-    */
+   
    // Respuesta del servidor para el NodeMCU
     res.send('Funcio');
 });
