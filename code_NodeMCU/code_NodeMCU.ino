@@ -1,7 +1,13 @@
 
 #include <ESP8266WiFi.h>
-const char* ssid = "EnGenius27EDCC";
-const char* password = "ZYB3VBAF8PF2";
+#include <ESP8266HTTPClient.h>
+const char* ssid = "COM-818";
+const char* password = "";
+
+const char* host = "http://192.168.10.102/api";
+
+String data;
+String preview;
 
 int valor;
 int estado = 0;   
@@ -10,6 +16,19 @@ int led = 12;   // the pin that the LED is atteched to
 int sensor = 5; // 
 int state = LOW;             // by default, no motion detected
 int val = 0; 
+int push = 13;
+int led2 = 14;
+int value = 0;
+
+// Estructura para guardar los elementos de la request de HTTP
+struct ServerResponse 
+{
+  int HTTP_CODE = -1;
+  String PAYLOAD = "__No Response From Server__";
+};
+ServerResponse httpPOST(const String& JSON);
+ServerResponse httpGET();
+
 
 // LED pin
 void setup() {
@@ -20,6 +39,8 @@ void setup() {
   pinMode(15, OUTPUT);
   pinMode(led, OUTPUT);      // initalize LED as an output
   pinMode(sensor, INPUT);
+  pinMode(push, INPUT);
+  pinMode(led2, OUTPUT);
 
   Serial.begin(1200);
 
@@ -64,7 +85,7 @@ void loop() {
   }
 
   gro = analogRead(A0);
-  Serial.println(gro);
+  //Serial.println(gro);
   digitalWrite(4, estado); 
   valor = digitalRead(0);
   if (valor == HIGH){
@@ -93,5 +114,96 @@ void loop() {
         Serial.println("Motion stopped!");
         state = LOW;       // update variable state to LOW
     }
-  } 
+  }
+      
+  value = digitalRead(push);
+  if (value == HIGH) {
+    digitalWrite(led2, !estado);
+  }
+  else {
+    digitalWrite(led2, estado);
+  }
+
+  preview = data;
+  if (val == HIGH && valor == HIGH && value == HIGH){
+    data = "{\"salon_id\":\"3101\",\"estado\":\"1\",\"luz\":\"1\"}";
+  }
+  else if (val == HIGH && valor == HIGH && value == LOW){
+    data = "{\"salon_id\":\"3101\",\"estado\":\"1\",\"luz\":\"0\"}";
+  }
+  else if (value == HIGH && (val == LOW || valor == LOW)){
+    data = "{\"salon_id\":\"3101\",\"estado\":\"0\",\"luz\":\"1\"}";   
+  }
+  else{
+    data = "{\"salon_id\":\"3101\",\"estado\":\"0\",\"luz\":\"0\"}";    
+  }
+
+  ServerResponse respuesta;
+  respuesta = httpPOST(data);
+  Serial.println(respuesta.PAYLOAD); 
+  Serial.println(respuesta.HTTP_CODE);
+
+  delay(30000);         
+  
+
+
 }
+
+/*
+  Función que toma una string con formato de JSON y la envia a la url que definimos arriba
+  hace un POST de http y regresa lo que envió el servidor.
+  Si el código de respuesta es -1 entondes la request no se envió.
+
+  @param const String& JSON
+  @return ServerResponse
+*/
+ServerResponse httpPOST(const String& JSON) 
+{
+  ServerResponse response;
+  if(WiFi.status() == WL_CONNECTED)
+  {
+    WiFiClient client;
+    HTTPClient http;  
+    http.begin(client, host);
+    http.addHeader("Content-Type", "application/json");
+
+    response.HTTP_CODE = http.POST(JSON);
+
+    if(response.HTTP_CODE > 0)
+      response.PAYLOAD = http.getString();
+    else
+      Serial.println("Error al enviar el mensaje");
+
+    http.end();
+  }
+  return response;
+}
+
+/*
+  Función que hace un GET de http y regresa lo que envió el servidor.
+  Si el código de respuesta es -1 entondes la request no se envió.
+
+  @return ServerResponse
+*/
+ServerResponse httpGET()
+{
+  ServerResponse response;
+  if (WiFi.status() == WL_CONNECTED) 
+  {
+    WiFiClient client;
+    HTTPClient http;
+    http.begin(client, host);
+
+    response.HTTP_CODE = http.GET();
+
+    if(response.HTTP_CODE > 0)
+      response.PAYLOAD = http.getString();
+    else
+      Serial.println("Error al enviar el mensaje");
+
+    http.end();
+  }
+  return response;
+
+}
+
