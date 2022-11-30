@@ -1,6 +1,7 @@
 <p style="text-align: center;">
   <img src="readme_images/sql.png" alt="node" style="width:200px;"/>
   </p>
+  
   # Get a Room
 
 Team 4 BITS
