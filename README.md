@@ -1,4 +1,7 @@
-# IOT_Project
+<p style="text-align: center;">
+  <img src="readme_images/sql.png" alt="node" style="width:200px;"/>
+  </p>
+  # Get a Room
 
 Team 4 BITS
   - Alain Vicencio Arizabalo A01620758
@@ -152,5 +155,6 @@ A web application that allows the Tec community to easily know if a campus class
        iot_project/code_server/index.js /
        
   </p> 
+  
 ## <span style="color: rgb(26, 99, 169);">**Web Page**</span>
 
