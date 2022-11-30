@@ -1,5 +1,5 @@
 <p style="text-align: center;">
-  <img src="readme_images/logo.png" alt="logo" style="width:200px:"/>
+  <img src="readme_images/logo.png" alt="logo" style="width:350px;"/>
   </p>
   
   # Get a Room
