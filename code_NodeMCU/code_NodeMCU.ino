@@ -4,7 +4,7 @@
 const char* ssid = "COM-818";
 const char* password = "";
 
-const char* host = "http://192.168.10.102/api";
+const char* host = "http://192.168.10.100/api";
 
 String data;
 String preview;
@@ -143,7 +143,7 @@ void loop() {
   Serial.println(respuesta.PAYLOAD); 
   Serial.println(respuesta.HTTP_CODE);
 
-  delay(30000);         
+  delay(15000);         
   
 
 

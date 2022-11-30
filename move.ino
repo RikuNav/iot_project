@@ -4,9 +4,9 @@
     Modified by Rui Santos based on PIR sensor by Limor Fried
 */
  
-int led = 13;                // the pin that the LED is atteched to
+int d = 13;                // the pin that the LED is atteched to
 int sensor = 2;              // the pin that the sensor is atteched to
-int state = LOW;             // by default, no motion detected
+int state = LOW;            // by default, no motion detected
 int val = 0;                 // variable to store the sensor status (value)
 
 void setup() {
