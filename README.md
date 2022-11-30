@@ -1,4 +1,8 @@
-# IOT_Project
+<p style="text-align: center;">
+  <img src="readme_images/sql.png" alt="node" style="width:200px;"/>
+  </p>
+  
+  # Get a Room
 
 Team 4 BITS
   - Alain Vicencio Arizabalo A01620758
@@ -75,6 +79,7 @@ A web application that allows the Tec community to easily know if a campus class
   https://randomnerdtutorials.com/guide-for-microphone-sound-sensor-with-arduino/
   <br />
   Datasheet:
+  <br />
   https://cdn.awsli.com.br/945/945993/arquivos/sound%20sensor%20module.pdf
   </p>
   
@@ -87,6 +92,7 @@ A web application that allows the Tec community to easily know if a campus class
   https://randomnerdtutorials.com/arduino-with-pir-motion-sensor/
   <br />
   Datasheet:
+  <br />
   https://www.epitran.it/ebayDrive/datasheet/44.pdf
   </p>
   
@@ -98,6 +104,58 @@ A web application that allows the Tec community to easily know if a campus class
   </p>
 
 ## <span style="color: rgb(26, 99, 169);">**Data Base**</span>
+ - Script:
+   <p style = "text-align: center;">
+     CREATE TABLE salon(
+        salon_id INT NOT NULL PRIMARY KEY,
+        capacidad INT,
+        imagen TEXT
+    );
 
+    CREATE TABLE OCUPADO(
+      salon_id INT NOT NULL,
+        estado INT NOT NULL,
+        hora TIME NOT NULL,
+        fecha DATE NOT NULL,
+        luz INT,
+        PRIMARY KEY(estado, hora, fecha)
+    );
+
+    ALTER TABLE OCUPADO
+    ADD FOREIGN KEY (salon_id) REFERENCES SALON(salon_id);
+
+   </p>
+   
+ - Connection from Node MCU to Data Base:
+   <p style="text-align: center;">
+     This is where the Node.js server comes into play. Proceed if downloaded.
+   </p>
+ 
+ - From NODE MCU to server:
+   <p style="text-align: center;">
+     In the arduino code, once certain specifications are reached, the NodeMCU will send a data string to the server, this is in the for of
+    </br>
+        - If there is both sound and movement, and the lights are on. Sends to server classrooom id (3101), status (1) and light status (1). </br>
+        - If there is both sound and movement, and the lights are off. Sends to server classroom id (3101), status (1) and light status (0). </br>
+        - If there no sound or no movement, and the lights are on. Sends to server classroom id (3101), status (0) and light status (1). </br>
+        - In any other case, sends to server classroom id (3101), status (0) ad light status (0).
+     
+     Remember from Hardware explanation that the status of classroom is marked as 'occupied' (with 1) only when it detects both sound and movement.
+     What this part of the code does is send a POST request for the addition of the data string to the Data Base.
+     
+ Code for connexion, alongside its elxanation in commentry is in the following direction.
+ code_server/index.js
+
+  </p>
+  
+ - From Server to Data Base:
+   <p>
+       Once the POST request is sent, the js document sets the connection to the database and executes the querry to insert the values sent from the Node MCU. </br>
+       Note that the NodeMCU does not send time and date, this is set in the JS code. </br>
+       The code for this, along with its explanation in comments is available in the following rout: </br>
+       iot_project/code_server/index.js /
+       
+  </p> 
+  
 ## <span style="color: rgb(26, 99, 169);">**Web Page**</span>
 
