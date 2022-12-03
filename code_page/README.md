@@ -1,7 +1,3 @@
-En esta carpeta van todos los archivos que use nuestra página web; js, css, 
-imágenes, fuentes, etc...
-
-Nuestro servidor va a enviar únicamente el html inicial que dejamos en la carpeta 
-del servidor, todos los archivos que se linkeen en este van a ser buscados en este 
-directorio así que lo podemos pensar como la ruta base por si queremos añadir más
-carpetas y cosas así.
+# Requisitos 
+Para poder desplegar la página web lo que necesitamos es tener dos herramientas instaladas: React y Vite, la primera es una librería de JavaScript que nos facilita la creación de intervafez web, y la segunda es una un bootstrap para poder desplejar un servidor locar donde montaremos nuestra aplicación.
+---
