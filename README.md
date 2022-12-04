@@ -7,7 +7,7 @@
 Team 4 BITS
   - Alain Vicencio Arizabalo A01620758
   - Fernando Josué Matute A00833375
-  - Juan Pablo Martinez Valdivia A01275676
+  - José Pablo Martínez Valdivia A01275676
   - Ricardo Navarro Gómez A01708825
   - Salvador Rodríguez Paredes A01704562
 
