@@ -1,5 +1,5 @@
 <p style="text-align: center;">
-  <img src="readme_images/logo.png" alt="logo" style="width:350px;"/>
+  <img src="__assets/logo.png" alt="logo" style="width:350px;"/>
   </p>
   
   # Get a Room
@@ -20,7 +20,7 @@ A web application that allows the Tec community to easily know if a campus class
 ## <span style="color: rgb(26, 99, 169);">**Software used**</span>
   - MySQL Data Base
   <p style="text-align: center;">
-  <img src="readme_images/sql.png" alt="node" style="width:200px;"/>
+  <img src="__assets/sql.png" alt="node" style="width:200px;"/>
   <br />
   Download here either one:
   <br />
@@ -31,7 +31,7 @@ A web application that allows the Tec community to easily know if a campus class
   
   - Arduino
   <p style="text-align: center;">
-  <img src="readme_images/arduino.png" alt="node" style="width:200px;"/>
+  <img src="__assets/arduino.png" alt="node" style="width:200px;"/>
   <br />
   Download here:
   <br />
@@ -40,7 +40,7 @@ A web application that allows the Tec community to easily know if a campus class
   
   - Node JS
   <p style="text-align: center;">
-  <img src="readme_images/nodejs.png" alt="node" style="width:200px;"/>
+  <img src="__assets/nodejs.png" alt="node" style="width:200px;"/>
   <br />
   Download here:
   <br />
@@ -49,7 +49,7 @@ A web application that allows the Tec community to easily know if a campus class
   
   - React
   <p style="text-align: center;">
-  <img src="readme_images/react.png" alt="node" style="width:200px;"/>
+  <img src="__assets/react.png" alt="node" style="width:200px;"/>
   <br />
   Download here:
   <br />
@@ -59,7 +59,7 @@ A web application that allows the Tec community to easily know if a campus class
 ## <span style="color: rgb(26, 99, 169);">**Hardware**</span>
 - Node MCU ESP8266
   <p style="text-align: center;">
-  <img src="readme_images/node.png" alt="node" style="width:200px;"/>
+  <img src="__assets/node.png" alt="node" style="width:200px;"/>
   <br />
   Setting up your ESP8266:
   <br />
@@ -72,7 +72,7 @@ A web application that allows the Tec community to easily know if a campus class
   
 - Sound sensor
   <p style="text-align: center;">
-  <img src="readme_images/modulo-sensor-ruido-sonido.png" alt="node" style="width:200px;"/>
+  <img src="__assets/modulo-sensor-ruido-sonido.png" alt="node" style="width:200px;"/>
   <br />
   Testing the Sound Sensor:
   <br />
@@ -85,7 +85,7 @@ A web application that allows the Tec community to easily know if a campus class
   
 - Movement sensor
   <p style="text-align: center;">
-  <img src="readme_images/motion.png" alt="node" style="width:200px;"/>
+  <img src="__assets/motion.png" alt="node" style="width:200px;"/>
   <br />
   Testing the Motion Sensor:
   <br />
