@@ -1,95 +1,86 @@
-# ¿Cómo correr el servidor?
-Para correr nuestro servidor necesitamos 2 cosas: el servidor web y el servidor de 
-la base de datos. Hasta el momento solo he logrado configurar el servidor de apache 
-en MAMP para servir nuestra applicación en la ruta `http://dirección.ip/4bits` por 
-lo tanto si usan _MAPM_ solo deberán cambiar un archivo en la configuración.
+# How to run the server?
 
-En el caso de _XAMPP_ no pude configurar correctamente el servidor para que funcionara 
-así si lo ocupan deberemos usar un servidor de _nginx_, el cual incluyo en este 
-directorio ya configurado, de todas formas usaremos _XAMPP_ pero solo encenderemos el servicio de _MySql_.
+To run the server, you will need two things: a web server and a SQL database. 
+For the web server, you can use eighter _Apache_ or _Nginx_ and set it up as a 
+proxy to localhost:3000 and redirect the traffic to our custom link 
+http://ipAdress/4bits. For the database, you will need to have an instance of 
+_MySQL_ installed and running on your system.
 
----
-Sigan los pasos para _MAMP_ y _XAMPP_ dependiendo de lo que usen y finalmente 
-corran la aplicación.
+You can avoid the server and database installation by downloading _MAMP_ or _XAMPP_ 
+because eighter has an  _Apache_ and a SQL database installed. We recommend using 
+_MAMP_ because it is the only one we could configure as a proxy in this tutorial. 
+So if you want to use _XAMPP_, the only solution we can give you is to stop the 
+_Apache_ process and use our configured _Nginx_ server that we provide in this 
+repository.
 
-## Para correr la aplicación
----
-Primero deben tener instalado [node.js](https://nodejs.org/en/).
+You can find guides on how to set up _MAMP_ and _XAMPP_ in this document.
 
-Una vez instalado, navega al folder donde está el archivo _index.js_ y corre el comando
+## Running the app
+You will need to have [node.js](https://nodejs.org/en/) installed on your computer.
+
+Once installed, navigate to the `code_server` directory where the file _index.js_ 
+is . Then, run
 ```
 node . 
 ```
-ó
-```
-node index.js
-```
-## Configuración para XAMPP
----
-Realmente no hay mucho que configurar, simplemente como no vamos a usar _Apache_
-tendremos el problema de que no podremos usar _phpMyAdmin_ mientras el otro servidor 
-está corriendo.
+on the command prompt.
 
-Naveguen a la siguiente ruta desde el directorio de este proyecto 
+## XAMPP configuration
+As we won't be using _Apache_ for this one, we will have trouble visualizing our 
+database as we won't have access to _phpMyAdmin_ while the server is running.
+
+First, navigate to the following path relative to the project directory:
 ```
-\iot_project\code_server\nginx_server
+\code_server\nginx_server
 ```
 
-Ya está configurado todo para que las rutas funcionen igual así que usen los siguientes 
-comandos para manejar el servidor, realmente solo deben usar los de `start` y `stop` 
-pero agrego los demás que nos da la documentación:
+The server you will be running is already configured to work by using the `start` 
+and `stop` commands, but here is the full documentation:
 
-### Iniciar y parar el servidor
+### Starting and stopping the server
 ```
 start nginx
 nginx -s stop
 ```
-### Enlistar los procesos que están corriendo y forzar su salida por si no quieren parar
+### Listing the running processes and force quiting (on windows)
 ```
 @tasklist /fi "imagename eq nginx.exe"
 @taskkill /f /im nginx.exe
 ```
-### Otros
+### Others 
 ```
-nginx -s quit                 // Para parar el servidor... También... Creo...
-nginx -s reload               // Volver a iniciar el servidor
-nginx -s reopen               // Volver a abrir el servidor???
-
+nginx -s quit                 // Stoping the server... Also... I think...
+nginx -s reload               // Restarting the server
+nginx -s reopen               // Restarting the server... As well???
 ```
 
 ![](../__assets/xamppSetup.jpg)
 
-Después en _XAMPP_ inicien únicamente el servicio de _MySql_ y la aplicación ya 
-debería funcionar correctamente con su conexión a la base de datos.
+Then, on _XAMPP_, you may start only the _MySql_ process, and the app should work 
+correctly with the database. Given you endered your credentials right on the 
+_index.js_ file.
 
-## Configuración para MAMP
+## MAMP configuration
 ---
 ![](../__assets/mampRoute.jpg)
 
-Si hicieron una instalación por defecto de _MAMP_, sus archivos deberían estar en 
-`C:\` en cualquier otro caso tomen el directorio de instalación como su ruta base. 
-De ese directorio navegen a :
+Locate your _MAMP_ installation folder and navigate to:
 ```
-C:\MAMP\conf\apache
+\conf\apache
 ```
-Recordando replazar `C:\` por a ruta base si lo instalaron en otra parte.
 
 ![](../__assets/confRoute.jpg)
 
-Aquí encontrarán el archivo `httpd.conf`, ábranlo con el block de notas o con el 
-editor de texto de su preferencia y peguen la siguiente etiqueta casi al final del 
-archivo:
-
+Here we will find the `httpd.conf`, open it with any text editor and paste the
+following configuration almost at the end of the file.
 ```
 <VirtualHost *:80>
 	ProxyPass /4bits http://localhost:3000/
 	ProxyPass /api http://localhost:3000/api
 </VirtualHost>
 ```
-
 ![](../__assets/config.jpg)
 
-No creo que haya mucho problema si lo pegan en otra parte del archivo pero para 
-estar seguros intenten que quede en el mismo lugar que en la foto.
+We don't think it matters if you paste it anywhere on the file, but to be safe, use the photo above to guide yourself on where to put it
 
-Ahora si, pueden iniciar _MAMP_ y correr la aplicación de node.
+Now, open _MAMP_ and run the node app.
