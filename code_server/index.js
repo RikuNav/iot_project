@@ -38,7 +38,7 @@ networkInterfaces()['Wi-Fi'].forEach((netInt) => {
 // Maneja la ruta base en GET, devuelve el html de la página principal 
 app.get('/', (req, res) => {
     console.log(req.query)
-    if(!(req.query))
+    if(!(req.query.cr))
     {
         readFile('./index.html', 'utf-8', (err, html) => {
             if(err) {
